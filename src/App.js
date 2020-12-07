@@ -56,17 +56,17 @@ function App() {
     <table >
         <tr>
           <td className="mr-2 cart-total ">Cart total</td>
-          <td>0.000 KWD</td>
+          <td>{count*1500} KWD</td>
           
         </tr>
         <tr>
           <td className=" delivery-charge">Delivery charges</td>
-          <td>0.000 KWD</td>
+          <td>{count*25/100} KWD</td>
           
         </tr>
         <tr>
           <td className="total">Total</td>
-          <td>0.000 KWD</td>
+          <td>{count*1500 +count*25/100 } KWD</td>
           
         </tr>
         <tr>
