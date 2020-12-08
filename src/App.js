@@ -8,15 +8,20 @@ import {useState} from 'react';
 function App() {
 
   const[count,setCount]=useState(0)
+  const [count2,setCount2]=useState(0)
 
-  const  increment=()=>{
-   
-  
-
-  }
+  console.log(FakeData)
   const decrement=()=>{
-
+if(count>0){
+  setCount(count-1)
+}
   }
+
+  const decrement2=()=>{
+    if(count2>0){
+      setCount2(count2-1)
+    }
+      }
   
 
   return (
@@ -25,24 +30,41 @@ function App() {
      <div className="small-container cart-page">
        
        <table className="table">
-         {
-           FakeData.map(data=><tr>
+       
+           <tr>
              <td>
              <div className="cart-info">
-             <img src={data.img}/>
-           <div>{data.food}<br/><span className="text-scondary">{data.energy}</span></div>
+             <img src={veg}/>
+           <div>Veg Grill Sandwitch<br/><span className="text-scondary">1000 cal</span></div>
            </div>
              </td>
-             <td><div className="flex-column"><span  style={{fontWeight:'bold'}}>{data.price}  KWD</span>
-           <div className="input-group number-spinner mt-2" >  <button onClick={()=>setCount(count-1)} style={{backgroundColor:"#EFEFEF"}} class="btn-1 bg-light"><i class="fas fa-minus text-secondary"></i></button>
-           <span  className=" first-value text-center">{count}</span>
-                           <button onClick={()=>setCount(count+1)} style={{backgroundColor:"#EFEFEF"}} class="btn-2 bg-light"><i class="fas fa-plus text-secondary"></i></button>
+             <td><div className="flex-column"><span  style={{fontWeight:'bold'}}>1500  KWD</span>
+           <div className="input-group number-spinner mt-2" >  <button onClick={decrement} style={{backgroundColor:"#EFEFEF"}} class="btn-1 bg-light"><i class="fas fa-minus text-secondary"></i></button>
+  <span  className=" first-value text-center">{count}</span>
+                           <button  style={{backgroundColor:"#EFEFEF"}} onClick={()=>setCount(count+1)} class="btn-2 bg-light"><i class="fas fa-plus text-secondary"></i></button>
                            </div>
                            </div>
          </td>
            </tr>
-           )
-         }
+           
+         
+           <tr>
+             <td>
+             <div className="cart-info">
+             <img src={chicken}/>
+           <div>Chicken Grill Sandwitch<br/><span className="text-scondary">1000 cal</span></div>
+           </div>
+             </td>
+             <td><div className="flex-column"><span  style={{fontWeight:'bold'}}>1500 KWD</span>
+           <div className="input-group number-spinner mt-2" >  <button onClick={decrement2} style={{backgroundColor:"#EFEFEF"}} class="btn-1 bg-light"><i class="fas fa-minus text-secondary"></i></button>
+           <span  className=" first-value text-center">{count2}</span>
+                           <button onClick={()=>setCount2(count2+1)} style={{backgroundColor:"#EFEFEF"}} class="btn-2 bg-light"><i class="fas fa-plus text-secondary"></i></button>
+                           </div>
+                           </div>
+         </td>
+           </tr>
+           
+         
        
        </table>
      </div>
@@ -56,17 +78,17 @@ function App() {
     <table >
         <tr>
           <td className="mr-2 cart-total ">Cart total</td>
-          <td>{count*1500} KWD</td>
+          <td>{(count+count2)*1500} KWD</td>
           
         </tr>
         <tr>
           <td className=" delivery-charge">Delivery charges</td>
-          <td>{count*25/100} KWD</td>
+          <td>{(count+count2)*25/100} KWD</td>
           
         </tr>
         <tr>
           <td className="total">Total</td>
-          <td>{count*1500 +count*25/100 } KWD</td>
+          <td>{(count+count2)*1500 +(count+count2)*25/100 } KWD</td>
           
         </tr>
         <tr>

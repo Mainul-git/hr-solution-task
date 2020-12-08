@@ -191,7 +191,7 @@ td img{
     }
     .checkout{
       background-color: #E28F8F;
-      margin: auto;
+      margin: 0 auto;
       margin-top: 10px;
       width:900px;
       border-radius:0 0 50px 50px ;
@@ -220,7 +220,7 @@ td img{
   }
   .checkout{
     background-color: #E28F8F;
-    margin: auto;
+    margin:0 auto;
     margin-top: 10px;
     width:400px;
     border-radius:0 0 50px 50px ;
